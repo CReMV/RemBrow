@@ -84,6 +84,7 @@ Partial Class Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.LightGray
         Me.ClientSize = New System.Drawing.Size(284, 462)
         Me.Controls.Add(Me.SettingsExitButton)
         Me.Controls.Add(Me.GroupBox1)

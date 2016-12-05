@@ -37,7 +37,7 @@ Partial Class Tab
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BookMarksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.WebControl1 = New Awesomium.Windows.Forms.WebControl(Me.components)
+        Me.AweControlA = New Awesomium.Windows.Forms.WebControl(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.LoadingIndicator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -173,19 +173,19 @@ Partial Class Tab
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.WebControl1)
+        Me.Panel2.Controls.Add(Me.AweControlA)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 39)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1024, 561)
         Me.Panel2.TabIndex = 1
         '
-        'WebControl1
+        'AweControlA
         '
-        Me.WebControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebControl1.Location = New System.Drawing.Point(0, 0)
-        Me.WebControl1.Size = New System.Drawing.Size(1024, 561)
-        Me.WebControl1.TabIndex = 0
+        Me.AweControlA.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.AweControlA.Location = New System.Drawing.Point(0, 0)
+        Me.AweControlA.Size = New System.Drawing.Size(1024, 561)
+        Me.AweControlA.TabIndex = 0
         '
         'Tab
         '
@@ -226,6 +226,6 @@ Partial Class Tab
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BookMarksToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel2 As Panel
-    Private WithEvents WebControl1 As Awesomium.Windows.Forms.WebControl
+    Private WithEvents AweControlA As Awesomium.Windows.Forms.WebControl
     Friend WithEvents LoadingIndicator As PictureBox
 End Class
