@@ -33,7 +33,7 @@
     End Sub
 
     Private Sub GoButton_Click(sender As Object, e As EventArgs) Handles GoButton.Click
-        If AddressBar.Text.Contains(".com") Or AddressBar.Text.Contains(".net") Or AddressBar.Text.Contains(".org") Or AddressBar.Text.Contains(".edu") Or AddressBar.Text.Contains(".gr") And AddressBar.Text.Contains("http://") Then
+        If AddressBar.Text.Contains(".com") Or AddressBar.Text.Contains(".net") Or AddressBar.Text.Contains(".org") Or AddressBar.Text.Contains(".edu") Or AddressBar.Text.Contains(".gr") Then
             Try
                 WebControl1.Source = New Uri(AddressBar.Text)
             Catch ex As System.UriFormatException
@@ -45,7 +45,7 @@
     End Sub
 
     Private Sub AddressBar_KeyDown(sender As Object, e As KeyEventArgs) Handles AddressBar.KeyDown
-        If AddressBar.Text.Contains(".com") Or AddressBar.Text.Contains(".net") Or AddressBar.Text.Contains(".org") Or AddressBar.Text.Contains(".edu") Or AddressBar.Text.Contains(".gr") And AddressBar.Text.Contains("http://") Then
+        If AddressBar.Text.Contains(".com") Or AddressBar.Text.Contains(".net") Or AddressBar.Text.Contains(".org") Or AddressBar.Text.Contains(".edu") Or AddressBar.Text.Contains(".gr") Then
             Try
                 WebControl1.Source = New Uri(AddressBar.Text)
             Catch ex As System.UriFormatException
