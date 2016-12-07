@@ -37,13 +37,12 @@
         Else : AweControlA.Source = New Uri("https://www.google.gr/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=" & AddressBar.Text)
         End If
     End Sub
-
     Private Sub AddressBar_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             If AddressBar.Text.Contains(".com") Or AddressBar.Text.Contains(".net") Or AddressBar.Text.Contains(".org") Or AddressBar.Text.Contains(".edu") Or AddressBar.Text.Contains(".gr") Then
                 Try
                     AweControlA.Source = New Uri(AddressBar.Text)
-                Catch ex As System.UriFormatException
+                Catch ex As Exception
                     AweControlA.Source = New Uri("http://" + AddressBar.Text)
                     AddressBar.Text = "http://" + AddressBar.Text
                 End Try
@@ -51,7 +50,6 @@
             End If
         End If
     End Sub
-
     Private Sub AweControlA_LoadingFrameComplete(sender As Object, e As Awesomium.Core.LoadingFrameEventArgs) Handles AweControlA.LoadingFrameComplete
         LoadingIndicator.Visible = False
         Parent.Text = AweControlA.Title
