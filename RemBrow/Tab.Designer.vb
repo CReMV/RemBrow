@@ -24,9 +24,10 @@ Partial Class Tab
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.AddressBar = New Awesomium.Windows.Forms.AddressBox()
+        Me.AweControlA = New Awesomium.Windows.Forms.WebControl(Me.components)
         Me.LoadingIndicator = New System.Windows.Forms.PictureBox()
         Me.GoButton = New System.Windows.Forms.Button()
-        Me.AddressBar = New System.Windows.Forms.TextBox()
         Me.HomeButton = New System.Windows.Forms.Button()
         Me.ReloadButton = New System.Windows.Forms.Button()
         Me.StopButton = New System.Windows.Forms.Button()
@@ -36,19 +37,16 @@ Partial Class Tab
         Me.RemBrowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BookMarksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.AweControlA = New Awesomium.Windows.Forms.WebControl(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.LoadingIndicator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.AddressBar)
         Me.Panel1.Controls.Add(Me.LoadingIndicator)
         Me.Panel1.Controls.Add(Me.GoButton)
-        Me.Panel1.Controls.Add(Me.AddressBar)
         Me.Panel1.Controls.Add(Me.HomeButton)
         Me.Panel1.Controls.Add(Me.ReloadButton)
         Me.Panel1.Controls.Add(Me.StopButton)
@@ -60,6 +58,28 @@ Partial Class Tab
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1024, 39)
         Me.Panel1.TabIndex = 0
+        '
+        'AddressBar
+        '
+        Me.AddressBar.AcceptsReturn = True
+        Me.AddressBar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.AddressBar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.AddressBar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.AddressBar.Location = New System.Drawing.Point(453, 8)
+        Me.AddressBar.Name = "AddressBar"
+        Me.AddressBar.Size = New System.Drawing.Size(477, 22)
+        Me.AddressBar.TabIndex = 16
+        Me.AddressBar.URL = Nothing
+        Me.AddressBar.WebControl = Me.AweControlA
+        '
+        'AweControlA
+        '
+        Me.AweControlA.BackColor = System.Drawing.Color.White
+        Me.AweControlA.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.AweControlA.Location = New System.Drawing.Point(0, 39)
+        Me.AweControlA.Size = New System.Drawing.Size(1024, 561)
+        Me.AweControlA.TabIndex = 1
         '
         'LoadingIndicator
         '
@@ -80,18 +100,6 @@ Partial Class Tab
         Me.GoButton.TabIndex = 13
         Me.GoButton.Text = "GO"
         Me.GoButton.UseVisualStyleBackColor = True
-        '
-        'AddressBar
-        '
-        Me.AddressBar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.AddressBar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
-        Me.AddressBar.Location = New System.Drawing.Point(453, 4)
-        Me.AddressBar.Multiline = True
-        Me.AddressBar.Name = "AddressBar"
-        Me.AddressBar.Size = New System.Drawing.Size(477, 30)
-        Me.AddressBar.TabIndex = 12
-        Me.AddressBar.Text = "Write the web page address here"
         '
         'HomeButton
         '
@@ -171,27 +179,11 @@ Partial Class Tab
         Me.BookMarksToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
         Me.BookMarksToolStripMenuItem.Text = "BookMarks"
         '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.AweControlA)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 39)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1024, 561)
-        Me.Panel2.TabIndex = 1
-        '
-        'AweControlA
-        '
-        Me.AweControlA.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AweControlA.Location = New System.Drawing.Point(0, 0)
-        Me.AweControlA.Size = New System.Drawing.Size(1024, 561)
-        Me.AweControlA.TabIndex = 0
-        '
         'Tab
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(1024, 600)
-        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.AweControlA)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -208,14 +200,12 @@ Partial Class Tab
         CType(Me.LoadingIndicator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents GoButton As Button
-    Friend WithEvents AddressBar As TextBox
     Friend WithEvents HomeButton As Button
     Friend WithEvents ReloadButton As Button
     Friend WithEvents StopButton As Button
@@ -225,7 +215,7 @@ Partial Class Tab
     Friend WithEvents RemBrowToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BookMarksToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Panel2 As Panel
-    Private WithEvents AweControlA As Awesomium.Windows.Forms.WebControl
     Friend WithEvents LoadingIndicator As PictureBox
+    Friend WithEvents AddressBar As Awesomium.Windows.Forms.AddressBox
+    Friend WithEvents AweControlA As Awesomium.Windows.Forms.WebControl
 End Class
