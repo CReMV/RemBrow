@@ -26,20 +26,21 @@ Partial Class Tab
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.AddressBar = New Awesomium.Windows.Forms.AddressBox()
         Me.AweControlA = New Awesomium.Windows.Forms.WebControl(Me.components)
-        Me.LoadingIndicator = New System.Windows.Forms.PictureBox()
-        Me.GoButton = New System.Windows.Forms.Button()
-        Me.HomeButton = New System.Windows.Forms.Button()
-        Me.ReloadButton = New System.Windows.Forms.Button()
-        Me.StopButton = New System.Windows.Forms.Button()
         Me.ForwardButton = New System.Windows.Forms.Button()
         Me.BackButton = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.RemBrowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BookMarksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadingIndicator = New System.Windows.Forms.PictureBox()
+        Me.GoButton = New System.Windows.Forms.Button()
+        Me.HomeButton = New System.Windows.Forms.Button()
+        Me.ReloadButton = New System.Windows.Forms.Button()
+        Me.StopButton = New System.Windows.Forms.Button()
+        Me.WebSessionProvider1 = New Awesomium.Windows.Forms.WebSessionProvider(Me.components)
         Me.Panel1.SuspendLayout()
-        CType(Me.LoadingIndicator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.LoadingIndicator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -66,9 +67,9 @@ Partial Class Tab
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AddressBar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.AddressBar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.AddressBar.Location = New System.Drawing.Point(453, 8)
+        Me.AddressBar.Location = New System.Drawing.Point(260, 8)
         Me.AddressBar.Name = "AddressBar"
-        Me.AddressBar.Size = New System.Drawing.Size(477, 22)
+        Me.AddressBar.Size = New System.Drawing.Size(670, 22)
         Me.AddressBar.TabIndex = 16
         Me.AddressBar.URL = Nothing
         Me.AddressBar.WebControl = Me.AweControlA
@@ -78,62 +79,14 @@ Partial Class Tab
         Me.AweControlA.BackColor = System.Drawing.Color.White
         Me.AweControlA.Dock = System.Windows.Forms.DockStyle.Fill
         Me.AweControlA.Location = New System.Drawing.Point(0, 39)
+        Me.AweControlA.Margin = New System.Windows.Forms.Padding(0)
         Me.AweControlA.Size = New System.Drawing.Size(1024, 561)
         Me.AweControlA.TabIndex = 1
-        '
-        'LoadingIndicator
-        '
-        Me.LoadingIndicator.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LoadingIndicator.BackgroundImage = Global.RemBrow.My.Resources.Resources.Loading
-        Me.LoadingIndicator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.LoadingIndicator.Image = Global.RemBrow.My.Resources.Resources.Loading
-        Me.LoadingIndicator.Location = New System.Drawing.Point(982, 4)
-        Me.LoadingIndicator.Name = "LoadingIndicator"
-        Me.LoadingIndicator.Size = New System.Drawing.Size(30, 30)
-        Me.LoadingIndicator.TabIndex = 15
-        Me.LoadingIndicator.TabStop = False
-        '
-        'GoButton
-        '
-        Me.GoButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GoButton.Location = New System.Drawing.Point(936, 4)
-        Me.GoButton.Name = "GoButton"
-        Me.GoButton.Size = New System.Drawing.Size(40, 30)
-        Me.GoButton.TabIndex = 13
-        Me.GoButton.Text = "GO"
-        Me.GoButton.UseVisualStyleBackColor = True
-        '
-        'HomeButton
-        '
-        Me.HomeButton.Location = New System.Drawing.Point(387, 4)
-        Me.HomeButton.Name = "HomeButton"
-        Me.HomeButton.Size = New System.Drawing.Size(60, 30)
-        Me.HomeButton.TabIndex = 11
-        Me.HomeButton.Text = "HOME"
-        Me.HomeButton.UseVisualStyleBackColor = True
-        '
-        'ReloadButton
-        '
-        Me.ReloadButton.Location = New System.Drawing.Point(304, 4)
-        Me.ReloadButton.Name = "ReloadButton"
-        Me.ReloadButton.Size = New System.Drawing.Size(77, 30)
-        Me.ReloadButton.TabIndex = 10
-        Me.ReloadButton.Text = "RELOAD"
-        Me.ReloadButton.UseVisualStyleBackColor = True
-        '
-        'StopButton
-        '
-        Me.StopButton.Location = New System.Drawing.Point(241, 4)
-        Me.StopButton.Name = "StopButton"
-        Me.StopButton.Size = New System.Drawing.Size(57, 30)
-        Me.StopButton.TabIndex = 9
-        Me.StopButton.Text = "STOP"
-        Me.StopButton.UseVisualStyleBackColor = True
         '
         'ForwardButton
         '
         Me.ForwardButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ForwardButton.Location = New System.Drawing.Point(204, 4)
+        Me.ForwardButton.Location = New System.Drawing.Point(115, 4)
         Me.ForwardButton.Margin = New System.Windows.Forms.Padding(4)
         Me.ForwardButton.Name = "ForwardButton"
         Me.ForwardButton.Size = New System.Drawing.Size(30, 30)
@@ -145,7 +98,7 @@ Partial Class Tab
         '
         Me.BackButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
-        Me.BackButton.Location = New System.Drawing.Point(166, 4)
+        Me.BackButton.Location = New System.Drawing.Point(77, 4)
         Me.BackButton.Margin = New System.Windows.Forms.Padding(4)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(30, 30)
@@ -166,8 +119,8 @@ Partial Class Tab
         '
         Me.RemBrowToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SettingsToolStripMenuItem, Me.BookMarksToolStripMenuItem})
         Me.RemBrowToolStripMenuItem.Name = "RemBrowToolStripMenuItem"
-        Me.RemBrowToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
-        Me.RemBrowToolStripMenuItem.Text = "RemBrow"
+        Me.RemBrowToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
+        Me.RemBrowToolStripMenuItem.Text = "CReMV"
         '
         'SettingsToolStripMenuItem
         '
@@ -180,6 +133,61 @@ Partial Class Tab
         Me.BookMarksToolStripMenuItem.Name = "BookMarksToolStripMenuItem"
         Me.BookMarksToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
         Me.BookMarksToolStripMenuItem.Text = "BookMarks"
+        '
+        'LoadingIndicator
+        '
+        Me.LoadingIndicator.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LoadingIndicator.BackColor = System.Drawing.Color.Transparent
+        Me.LoadingIndicator.BackgroundImage = Global.RemBrow.My.Resources.Resources.Loading
+        Me.LoadingIndicator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.LoadingIndicator.Image = Global.RemBrow.My.Resources.Resources.Loading
+        Me.LoadingIndicator.Location = New System.Drawing.Point(936, 3)
+        Me.LoadingIndicator.Name = "LoadingIndicator"
+        Me.LoadingIndicator.Size = New System.Drawing.Size(30, 30)
+        Me.LoadingIndicator.TabIndex = 15
+        Me.LoadingIndicator.TabStop = False
+        '
+        'GoButton
+        '
+        Me.GoButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GoButton.BackgroundImage = Global.RemBrow.My.Resources.Resources.NavigateButton
+        Me.GoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GoButton.Location = New System.Drawing.Point(972, 4)
+        Me.GoButton.Name = "GoButton"
+        Me.GoButton.Size = New System.Drawing.Size(30, 30)
+        Me.GoButton.TabIndex = 13
+        Me.GoButton.UseVisualStyleBackColor = True
+        '
+        'HomeButton
+        '
+        Me.HomeButton.BackgroundImage = Global.RemBrow.My.Resources.Resources.HomeButton
+        Me.HomeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.HomeButton.Location = New System.Drawing.Point(224, 4)
+        Me.HomeButton.Name = "HomeButton"
+        Me.HomeButton.Size = New System.Drawing.Size(30, 30)
+        Me.HomeButton.TabIndex = 11
+        Me.HomeButton.UseVisualStyleBackColor = True
+        '
+        'ReloadButton
+        '
+        Me.ReloadButton.BackgroundImage = Global.RemBrow.My.Resources.Resources.ReloadButton
+        Me.ReloadButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ReloadButton.Location = New System.Drawing.Point(188, 4)
+        Me.ReloadButton.Name = "ReloadButton"
+        Me.ReloadButton.Size = New System.Drawing.Size(30, 30)
+        Me.ReloadButton.TabIndex = 10
+        Me.ReloadButton.UseVisualStyleBackColor = True
+        '
+        'StopButton
+        '
+        Me.StopButton.BackgroundImage = Global.RemBrow.My.Resources.Resources.StopButton
+        Me.StopButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.StopButton.Image = Global.RemBrow.My.Resources.Resources.StopButton
+        Me.StopButton.Location = New System.Drawing.Point(152, 4)
+        Me.StopButton.Name = "StopButton"
+        Me.StopButton.Size = New System.Drawing.Size(30, 30)
+        Me.StopButton.TabIndex = 9
+        Me.StopButton.UseVisualStyleBackColor = True
         '
         'Tab
         '
@@ -199,9 +207,9 @@ Partial Class Tab
         Me.Text = "WebPageTab"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.LoadingIndicator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.LoadingIndicator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -220,4 +228,5 @@ Partial Class Tab
     Friend WithEvents LoadingIndicator As PictureBox
     Friend WithEvents AddressBar As Awesomium.Windows.Forms.AddressBox
     Friend WithEvents AweControlA As Awesomium.Windows.Forms.WebControl
+    Friend WithEvents WebSessionProvider1 As Awesomium.Windows.Forms.WebSessionProvider
 End Class

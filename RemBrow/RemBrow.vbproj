@@ -13,6 +13,7 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -246,6 +246,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomeButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReloadButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StopButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NavigateButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
