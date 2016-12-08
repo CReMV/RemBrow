@@ -168,11 +168,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrowserWindow.vb">
+    <Compile Include="RemBrowMW.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BrowserWindow.Designer.vb">
-      <DependentUpon>BrowserWindow.vb</DependentUpon>
+    <Compile Include="RemBrowMW.Designer.vb">
+      <DependentUpon>RemBrowMW.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Settings.Designer.vb">
@@ -204,8 +204,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BrowserWindow.resx">
-      <DependentUpon>BrowserWindow.vb</DependentUpon>
+    <EmbeddedResource Include="RemBrowMW.resx">
+      <DependentUpon>RemBrowMW.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.vb</DependentUpon>

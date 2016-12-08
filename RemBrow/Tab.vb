@@ -32,9 +32,8 @@
                 AweControlA.Source = New Uri(AddressBar.Text)
             Catch ex As Exception
                 AweControlA.Source = New Uri("http://" + AddressBar.Text)
-                AddressBar.Text = "http://" + AddressBar.Text
             End Try
-        Else : AweControlA.Source = New Uri("https://www.google.gr/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=" & AddressBar.Text)
+        Else AweControlA.Source = New Uri(My.Settings.SearchEngine & AddressBar.Text)
         End If
     End Sub
     Private Sub AddressBar_KeyDown(sender As Object, e As KeyEventArgs)
@@ -44,17 +43,41 @@
                     AweControlA.Source = New Uri(AddressBar.Text)
                 Catch ex As Exception
                     AweControlA.Source = New Uri("http://" + AddressBar.Text)
-                    AddressBar.Text = "http://" + AddressBar.Text
                 End Try
-            Else : AweControlA.Source = New Uri("https://www.google.gr/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=" & AddressBar.Text)
+            Else AweControlA.Source = New Uri(My.Settings.SearchEngine & AddressBar.Text)
             End If
         End If
     End Sub
     Private Sub AweControlA_LoadingFrameComplete(sender As Object, e As Awesomium.Core.FrameEventArgs) Handles AweControlA.LoadingFrameComplete
-        LoadingIndicator.Enabled = False
+        LoadingIndicator.Visible = False
         Parent.Text = AweControlA.Title
     End Sub
     Private Sub AweControlA_LoadingFrame(sender As Object, e As Awesomium.Core.FrameEventArgs) Handles AweControlA.LoadingFrame
-        LoadingIndicator.Enabled = True
+        LoadingIndicator.Visible = True
+    End Sub
+    Private Sub AddTabToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddTabToolStripMenuItem.Click
+        Dim tab As New TabPage
+        Dim newtab As New Tab
+        newtab.Show()
+        newtab.Dock = DockStyle.Fill
+        newtab.TopLevel = False
+        tab.Controls.Add(newtab)
+        RemBrowMW.TabControl1.TabPages.Add(tab)
+        RemBrowMW.TabControl1.SelectedTab = tab
+    End Sub
+    Private Sub RemoveTabToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RemoveTabToolStripMenuItem.Click
+        If RemBrowMW.TabControl1.TabCount = 1 Then
+            Dim tab As New TabPage
+            Dim newtab As New Tab
+            newtab.Show()
+            newtab.Dock = DockStyle.Fill
+            newtab.TopLevel = False
+            tab.Controls.Add(newtab)
+            RemBrowMW.TabControl1.TabPages.Add(tab)
+            RemBrowMW.TabControl1.SelectedTab = tab
+            RemBrowMW.TabControl1.SelectedTab.Dispose()
+        Else
+            RemBrowMW.TabControl1.SelectedTab.Dispose()
+        End If
     End Sub
 End Class

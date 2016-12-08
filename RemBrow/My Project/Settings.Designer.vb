@@ -66,6 +66,18 @@ Namespace My
                 Me("HomePage") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("https://www.google.gr/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=")>  _
+        Public Property SearchEngine() As String
+            Get
+                Return CType(Me("SearchEngine"),String)
+            End Get
+            Set
+                Me("SearchEngine") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

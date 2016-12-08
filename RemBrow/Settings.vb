@@ -14,4 +14,13 @@
     Private Sub SettingsExitButton_Click(sender As Object, e As EventArgs) Handles SettingsExitButton.Click
         Me.Visible = False
     End Sub
+    Private Sub SE1_CheckedChanged(sender As Object, e As EventArgs) Handles SE1.CheckedChanged
+        My.Settings.SearchEngine = ("https://www.google.gr/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=")
+    End Sub
+    Private Sub SE2_CheckedChanged(sender As Object, e As EventArgs) Handles SE2.CheckedChanged
+        My.Settings.SearchEngine = ("https://gr.search.yahoo.com/search?p=")
+    End Sub
+    Private Sub SE3_CheckedChanged(sender As Object, e As EventArgs) Handles SE3.CheckedChanged
+        My.Settings.SearchEngine = ("https://www.bing.com/search?q=")
+    End Sub
 End Class

@@ -26,21 +26,23 @@ Partial Class Tab
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.AddressBar = New Awesomium.Windows.Forms.AddressBox()
         Me.AweControlA = New Awesomium.Windows.Forms.WebControl(Me.components)
+        Me.LoadingIndicator = New System.Windows.Forms.PictureBox()
+        Me.GoButton = New System.Windows.Forms.Button()
+        Me.HomeButton = New System.Windows.Forms.Button()
+        Me.ReloadButton = New System.Windows.Forms.Button()
+        Me.StopButton = New System.Windows.Forms.Button()
         Me.ForwardButton = New System.Windows.Forms.Button()
         Me.BackButton = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.RemBrowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BookMarksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoadingIndicator = New System.Windows.Forms.PictureBox()
-        Me.GoButton = New System.Windows.Forms.Button()
-        Me.HomeButton = New System.Windows.Forms.Button()
-        Me.ReloadButton = New System.Windows.Forms.Button()
-        Me.StopButton = New System.Windows.Forms.Button()
         Me.WebSessionProvider1 = New Awesomium.Windows.Forms.WebSessionProvider(Me.components)
+        Me.AddTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RemoveTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         CType(Me.LoadingIndicator, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -83,64 +85,12 @@ Partial Class Tab
         Me.AweControlA.Size = New System.Drawing.Size(1024, 561)
         Me.AweControlA.TabIndex = 1
         '
-        'ForwardButton
-        '
-        Me.ForwardButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ForwardButton.Location = New System.Drawing.Point(115, 4)
-        Me.ForwardButton.Margin = New System.Windows.Forms.Padding(4)
-        Me.ForwardButton.Name = "ForwardButton"
-        Me.ForwardButton.Size = New System.Drawing.Size(30, 30)
-        Me.ForwardButton.TabIndex = 8
-        Me.ForwardButton.Text = ">"
-        Me.ForwardButton.UseVisualStyleBackColor = True
-        '
-        'BackButton
-        '
-        Me.BackButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.BackButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
-        Me.BackButton.Location = New System.Drawing.Point(77, 4)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(4)
-        Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(30, 30)
-        Me.BackButton.TabIndex = 7
-        Me.BackButton.Text = "<"
-        Me.BackButton.UseVisualStyleBackColor = True
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RemBrowToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1024, 24)
-        Me.MenuStrip1.TabIndex = 14
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'RemBrowToolStripMenuItem
-        '
-        Me.RemBrowToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SettingsToolStripMenuItem, Me.BookMarksToolStripMenuItem})
-        Me.RemBrowToolStripMenuItem.Name = "RemBrowToolStripMenuItem"
-        Me.RemBrowToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
-        Me.RemBrowToolStripMenuItem.Text = "CReMV"
-        '
-        'SettingsToolStripMenuItem
-        '
-        Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
-        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
-        Me.SettingsToolStripMenuItem.Text = "Settings"
-        '
-        'BookMarksToolStripMenuItem
-        '
-        Me.BookMarksToolStripMenuItem.Name = "BookMarksToolStripMenuItem"
-        Me.BookMarksToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
-        Me.BookMarksToolStripMenuItem.Text = "BookMarks"
-        '
         'LoadingIndicator
         '
         Me.LoadingIndicator.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LoadingIndicator.BackColor = System.Drawing.Color.Transparent
         Me.LoadingIndicator.BackgroundImage = Global.RemBrow.My.Resources.Resources.Loading
         Me.LoadingIndicator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.LoadingIndicator.Image = Global.RemBrow.My.Resources.Resources.Loading
         Me.LoadingIndicator.Location = New System.Drawing.Point(936, 3)
         Me.LoadingIndicator.Name = "LoadingIndicator"
         Me.LoadingIndicator.Size = New System.Drawing.Size(30, 30)
@@ -189,6 +139,71 @@ Partial Class Tab
         Me.StopButton.TabIndex = 9
         Me.StopButton.UseVisualStyleBackColor = True
         '
+        'ForwardButton
+        '
+        Me.ForwardButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ForwardButton.Location = New System.Drawing.Point(115, 4)
+        Me.ForwardButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.ForwardButton.Name = "ForwardButton"
+        Me.ForwardButton.Size = New System.Drawing.Size(30, 30)
+        Me.ForwardButton.TabIndex = 8
+        Me.ForwardButton.Text = ">"
+        Me.ForwardButton.UseVisualStyleBackColor = True
+        '
+        'BackButton
+        '
+        Me.BackButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BackButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
+        Me.BackButton.Location = New System.Drawing.Point(77, 4)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.BackButton.Name = "BackButton"
+        Me.BackButton.Size = New System.Drawing.Size(30, 30)
+        Me.BackButton.TabIndex = 7
+        Me.BackButton.Text = "<"
+        Me.BackButton.UseVisualStyleBackColor = True
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RemBrowToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1024, 24)
+        Me.MenuStrip1.TabIndex = 14
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'RemBrowToolStripMenuItem
+        '
+        Me.RemBrowToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SettingsToolStripMenuItem, Me.BookMarksToolStripMenuItem, Me.AddTabToolStripMenuItem, Me.RemoveTabToolStripMenuItem})
+        Me.RemBrowToolStripMenuItem.Name = "RemBrowToolStripMenuItem"
+        Me.RemBrowToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
+        Me.RemBrowToolStripMenuItem.Text = "CReMV"
+        '
+        'SettingsToolStripMenuItem
+        '
+        Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
+        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
+        Me.SettingsToolStripMenuItem.Text = "Settings"
+        '
+        'BookMarksToolStripMenuItem
+        '
+        Me.BookMarksToolStripMenuItem.Name = "BookMarksToolStripMenuItem"
+        Me.BookMarksToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
+        Me.BookMarksToolStripMenuItem.Text = "BookMarks"
+        '
+        'AddTabToolStripMenuItem
+        '
+        Me.AddTabToolStripMenuItem.Name = "AddTabToolStripMenuItem"
+        Me.AddTabToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.T), System.Windows.Forms.Keys)
+        Me.AddTabToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.AddTabToolStripMenuItem.Text = "Add Tab"
+        '
+        'RemoveTabToolStripMenuItem
+        '
+        Me.RemoveTabToolStripMenuItem.Name = "RemoveTabToolStripMenuItem"
+        Me.RemoveTabToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
+        Me.RemoveTabToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.RemoveTabToolStripMenuItem.Text = "Remove Tab"
+        '
         'Tab
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -207,9 +222,9 @@ Partial Class Tab
         Me.Text = "WebPageTab"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.LoadingIndicator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.LoadingIndicator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -229,4 +244,6 @@ Partial Class Tab
     Friend WithEvents AddressBar As Awesomium.Windows.Forms.AddressBox
     Friend WithEvents AweControlA As Awesomium.Windows.Forms.WebControl
     Friend WithEvents WebSessionProvider1 As Awesomium.Windows.Forms.WebSessionProvider
+    Friend WithEvents AddTabToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RemoveTabToolStripMenuItem As ToolStripMenuItem
 End Class
