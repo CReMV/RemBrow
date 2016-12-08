@@ -50,11 +50,11 @@
             End If
         End If
     End Sub
-    Private Sub AweControlA_LoadingFrameComplete(sender As Object, e As Awesomium.Core.LoadingFrameEventArgs) Handles AweControlA.LoadingFrameComplete
-        LoadingIndicator.Visible = False
-        Parent.Text = AweControlA.Title
-    End Sub
-    Private Sub WebControl1_LoadingFrame(sender As Object, e As Awesomium.Core.LoadingFrameEventArgs)
-        LoadingIndicator.Visible = True
-    End Sub
+    'Private Sub AweControlA_LoadingFrameComplete(sender As Object, e As Awesomium.Core.LoadingFrameEventArgs) Handles AweControlA.LoadingFrameComplete
+    '    LoadingIndicator.Enabled = False
+    '    Parent.Text = AweControlA.Title
+    'End Sub
+    'Private Sub AweControlA_LoadingFrame(sender As Object, e As Awesomium.Core.LoadingFrameEventArgs) Handles AweControlA.LoadingFrame
+    '    LoadingIndicator.Enabled = True
+    'End Sub
 End Class

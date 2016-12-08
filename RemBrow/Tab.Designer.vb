@@ -84,6 +84,8 @@ Partial Class Tab
         'LoadingIndicator
         '
         Me.LoadingIndicator.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LoadingIndicator.BackgroundImage = Global.RemBrow.My.Resources.Resources.Loading
+        Me.LoadingIndicator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.LoadingIndicator.Image = Global.RemBrow.My.Resources.Resources.Loading
         Me.LoadingIndicator.Location = New System.Drawing.Point(982, 4)
         Me.LoadingIndicator.Name = "LoadingIndicator"
