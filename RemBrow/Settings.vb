@@ -1,6 +1,13 @@
 ﻿Public Class Settings
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HomePageSpace.Text = My.Settings.HomePage
+        If (My.Settings.SearchEngine = ("https://gr.search.yahoo.com/search?p=")) Then
+            SE2.Select()
+        ElseIf (My.Settings.SearchEngine = ("https://www.bing.com/search?q=")) Then
+            SE3.Select()
+        Else
+            SE1.Select()
+        End If
     End Sub
     Private Sub SetHomePageButton_Click(sender As Object, e As EventArgs) Handles SetHomePageButton.Click
         My.Settings.HomePage = HomePageSpace.Text

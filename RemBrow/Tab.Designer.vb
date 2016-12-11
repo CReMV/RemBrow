@@ -37,9 +37,9 @@ Partial Class Tab
         Me.RemBrowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BookMarksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WebSessionProvider1 = New Awesomium.Windows.Forms.WebSessionProvider(Me.components)
         Me.AddTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RemoveTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WebSessionProvider1 = New Awesomium.Windows.Forms.WebSessionProvider(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.LoadingIndicator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -82,7 +82,7 @@ Partial Class Tab
         Me.AweControlA.Dock = System.Windows.Forms.DockStyle.Fill
         Me.AweControlA.Location = New System.Drawing.Point(0, 39)
         Me.AweControlA.Margin = New System.Windows.Forms.Padding(0)
-        Me.AweControlA.Size = New System.Drawing.Size(1024, 561)
+        Me.AweControlA.Size = New System.Drawing.Size(1024, 729)
         Me.AweControlA.TabIndex = 1
         '
         'LoadingIndicator
@@ -181,13 +181,13 @@ Partial Class Tab
         'SettingsToolStripMenuItem
         '
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
-        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
+        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.SettingsToolStripMenuItem.Text = "Settings"
         '
         'BookMarksToolStripMenuItem
         '
         Me.BookMarksToolStripMenuItem.Name = "BookMarksToolStripMenuItem"
-        Me.BookMarksToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
+        Me.BookMarksToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.BookMarksToolStripMenuItem.Text = "BookMarks"
         '
         'AddTabToolStripMenuItem
@@ -207,7 +207,7 @@ Partial Class Tab
         'Tab
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(1024, 600)
+        Me.ClientSize = New System.Drawing.Size(1024, 768)
         Me.Controls.Add(Me.AweControlA)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(161, Byte))

@@ -33,13 +33,13 @@ Partial Class RemBrowMW
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.Padding = New System.Drawing.Point(0, 0)
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1008, 562)
+        Me.TabControl1.Size = New System.Drawing.Size(1008, 730)
         Me.TabControl1.TabIndex = 0
         '
         'RemBrowMW
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(1008, 562)
+        Me.ClientSize = New System.Drawing.Size(1008, 730)
         Me.Controls.Add(Me.TabControl1)
         Me.HelpButton = True
         Me.Name = "RemBrowMW"
